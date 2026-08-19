@@ -1511,6 +1511,27 @@ body, html {
 /* =========================================================================
    DOWNLOAD CARDS SECTION
    ========================================================================= */
+.single-download-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.single-featured-card {
+  max-width: 640px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(36, 22, 60, 0.95) 0%, rgba(20, 14, 32, 0.95) 100%);
+  border: 2px solid var(--purple-primary);
+  box-shadow: 0 20px 50px rgba(168, 85, 247, 0.3);
+  padding: 42px 36px;
+}
+
+.big-dl-btn {
+  padding: 16px 36px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
 .download-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

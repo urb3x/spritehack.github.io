@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "spritehack",
+  "version": "3.5.0",
+  "name": "SpriteHack",
+  "description": "Wurst/Vape/Meteor/LiquidBounce inspired hack client - in-game ClickGUI with Right Shift",
+  "authors": ["SpriteHack"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.spritehack.SpriteHackMod"
+    ]
+  },
+  "mixins": [
+    "spritehack.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "*"
+  }
+}
