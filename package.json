@@ -1,0 +1,18 @@
+{
+  "name": "spritehack-launcher",
+  "version": "3.5.0",
+  "description": "SpriteHack - Next-Gen Minecraft Client & Cracked Multiplayer Launcher",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173",
+    "build": "vite build",
+    "preview": "vite preview",
+    "launch:cracked": "node desktop-launcher/launch_cracked.js"
+  },
+  "dependencies": {
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.12"
+  }
+}

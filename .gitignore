@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.vite/
+.gradle/
+**/build/
+**/bin/
+fabric-mod/libs/
+fabric-mod/.gradle/
+*.hprof
+logs/
+saves/
+resourcepacks/
+*.log

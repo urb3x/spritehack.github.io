@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpriteHack - #1 Undetectable Purple Minecraft Utility Client</title>
+  <meta name="description" content="Dominate Minecraft with SpriteHack v3.5 - The ultimate purple-themed Minecraft utility client with 100+ modules, anticheat bypasses, and 3D web launcher.">
+  <link rel="icon" type="image/jpg" href="./spritehack_logo.jpg">
+  <link rel="stylesheet" href="./src/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- ================= WEBSITE MAIN WRAPPER ================= -->
+  <div id="website-root">
+    
+    <!-- NAVIGATION BAR -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="#hero" class="brand-logo">
+          <img src="./spritehack_logo.jpg" alt="SpriteHack Logo" class="header-logo-img">
+        </a>
+
+        <nav class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#arguments">Why SpriteHack?</a>
+          <a href="#modules">Modules</a>
+          <a href="#web-demo">Web Client</a>
+          <a href="#download">Download</a>
+          <a href="#comparison">Compare</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+          <button id="btn-header-demo" class="btn-purple-outline">⚡ Launch Web Demo</button>
+          <a href="#download" class="btn-purple-solid">📥 Download v3.5</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="purple-bg-glow glow-top"></div>
+      <div class="purple-bg-glow glow-right"></div>
+
+      <div class="hero-container">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>SPRITEHACK v3.5.0 - NEXT-GEN PURPLE EDITION</span>
+        </div>
+
+        <h1 class="hero-title">
+          DOMINATE EVERY SERVER WITH <span class="purple-gradient-text">SPRITEHACK</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          The ultimate purple-themed Minecraft utility client. Engineered with <b>AI-assisted anticheat bypasses</b>, <b>+30% FPS optimization</b>, and over <b>100+ combat & movement modules</b> for Fabric 1.20.4 & 1.8.9.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#download" class="btn-hero-primary">
+            <span>📥</span> Download Client (Free)
+          </a>
+          <button id="btn-hero-launch-demo" class="btn-hero-secondary">
+            <span>⚡</span> Try Web Demo in Browser
+          </button>
+          <a href="https://github.com/urb3x/spritehack.github.io" target="_blank" rel="noopener" class="btn-hero-tertiary">
+            <span>⭐</span> GitHub Repository
+          </a>
+        </div>
+
+        <!-- Quick Stats Grid -->
+        <div class="hero-stats-grid">
+          <div class="stat-card">
+            <div class="stat-num">100+</div>
+            <div class="stat-label">Bypass Modules</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">FPS Performance</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">0%</div>
+            <div class="stat-label">Detection Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Free & Open Source</div>
+          </div>
+        </div>
+
+        <!-- Hero Preview Showcase Box -->
+        <div class="hero-preview-box">
+          <div class="preview-header">
+            <div class="window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="preview-title">SpriteHack Purple ClickGUI Preview - [Press Right-Shift In-Game]</div>
+            <div class="preview-version">Fabric 1.20.4 / 1.8.9</div>
+          </div>
+
+          <div class="preview-body">
+            <div class="mock-gui-panel combat">
+              <div class="mock-panel-title">⚔️ COMBAT</div>
+              <div class="mock-mod active"><span class="mod-name">KillAura</span> <span class="mod-tag">GrimAC</span></div>
+              <div class="mock-mod active"><span class="mod-name">AutoCrystal</span> <span class="mod-tag">Fast</span></div>
+              <div class="mock-mod active"><span class="mod-name">Velocity</span> <span class="mod-tag">0% / 0%</span></div>
+              <div class="mock-mod"><span class="mod-name">TriggerBot</span> <span class="mod-tag">Legit</span></div>
+              <div class="mock-mod active"><span class="mod-name">TargetHUD</span> <span class="mod-tag">3D</span></div>
+            </div>
+
+            <div class="mock-gui-panel movement">
+              <div class="mock-panel-title">🏃 MOVEMENT</div>
+              <div class="mock-mod active"><span class="mod-name">PacketFly</span> <span class="mod-tag">Bypass</span></div>
+              <div class="mock-mod active"><span class="mod-name">Scaffold</span> <span class="mod-tag">Auto</span></div>
+              <div class="mock-mod active"><span class="mod-name">Speed</span> <span class="mod-tag">Hop</span></div>
+              <div class="mock-mod"><span class="mod-name">Jesus</span> <span class="mod-tag">Dolphin</span></div>
+              <div class="mock-mod active"><span class="mod-name">AirJump</span> <span class="mod-tag">Multi</span></div>
+            </div>
+
+            <div class="mock-gui-panel render">
+              <div class="mock-panel-title">👁️ RENDER</div>
+              <div class="mock-mod active"><span class="mod-name">X-Ray</span> <span class="mod-tag">OreFinder</span></div>
+              <div class="mock-mod active"><span class="mod-name">ESP Box</span> <span class="mod-tag">Purple Glow</span></div>
+              <div class="mock-mod active"><span class="mod-name">Nametags</span> <span class="mod-tag">Health</span></div>
+              <div class="mock-mod active"><span class="mod-name">Fullbright</span> <span class="mod-tag">1000%</span></div>
+              <div class="mock-mod"><span class="mod-name">Tracers</span> <span class="mod-tag">Lines</span></div>
+            </div>
+
+            <div class="mock-gui-panel player">
+              <div class="mock-panel-title">🛡️ PLAYER</div>
+              <div class="mock-mod active"><span class="mod-name">AutoArmor</span> <span class="mod-tag">Best</span></div>
+              <div class="mock-mod active"><span class="mod-name">ChestStealer</span> <span class="mod-tag">Instant</span></div>
+              <div class="mock-mod active"><span class="mod-name">FastBreak</span> <span class="mod-tag">Insta</span></div>
+              <div class="mock-mod"><span class="mod-name">AutoEat</span> <span class="mod-tag">Smart</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONVINCING ARGUMENTS SECTION -->
+    <section id="arguments" class="section-padding dark-purple-bg">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <div class="section-tag">WHY CHOOSE SPRITEHACK</div>
+          <h2 class="section-title">THE UNBEATABLE <span class="purple-gradient-text">ADVANTAGES</span></h2>
+          <p class="section-desc">Why thousands of Minecraft players choose SpriteHack over bloated or paid clients.</p>
+        </div>
+
+        <div class="arguments-grid">
+          <!-- Card 1 -->
+          <div class="argument-card">
+            <div class="arg-icon">🛡️</div>
+            <h3>Undetectable Bypasses</h3>
+            <p>Built with AI vector rotation smoothing and dynamic packet randomization. Easily bypass modern anticheats including <b>GrimAC, Vulcan, Hypixel Watchdog, NCP, Matrix, and Verus</b> without bans.</p>
+            <div class="arg-badge">GrimAC & Watchdog Safe</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="argument-card">
+            <div class="arg-icon">⚡</div>
+            <h3>Zero FPS Drop & Lightweight</h3>
+            <p>Engineered with zero-allocation memory handling and optimized rendering loops. Experience <b>+30% higher FPS</b> compared to vanilla Minecraft, Lunar, or Meteor Client.</p>
+            <div class="arg-badge">500+ FPS Engine</div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="argument-card">
+            <div class="arg-icon">🔮</div>
+            <h3>100+ Custom Modules</h3>
+            <p>From Silent KillAura and AutoCrystal to Packet Fly, Scaffold, X-Ray, and AutoArmor. Total dominance in 1.20.4 Anarchy, 1.8.9 Bedwars, and Competitive PvP servers.</p>
+            <div class="arg-badge">100+ Hacks Included</div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="argument-card">
+            <div class="arg-icon">💜</div>
+            <h3>Iconic Purple Neon ClickGUI</h3>
+            <p>Customizable dark-purple glassmorphic interface. Draggable windows, search navigator bar, HUD editor, instant config presets (Legit, Anarchy, PvP, Rage), and keybind mapping.</p>
+            <div class="arg-badge">Fully Customizable UI</div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="argument-card">
+            <div class="arg-icon">🌐</div>
+            <h3>Web Launcher & Cross-Version</h3>
+            <p>Support for Fabric 1.20.4, 1.8.9, standalone Windows <code>.exe</code> launcher, plus a <b>full interactive 3D Web Client</b> directly in your browser without installing anything!</p>
+            <div class="arg-badge">Instant Browser Demo</div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="argument-card">
+            <div class="arg-icon">🔓</div>
+            <h3>100% Free & Open Source</h3>
+            <p>No paywalls, no crypto miners, no RATs, no hidden telemetry. SpriteHack is 100% open-source software maintained on GitHub for complete transparency and safety.</p>
+            <div class="arg-badge">Safe & Clean Code</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE ARSENAL SECTION -->
+    <section id="modules" class="section-padding">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <div class="section-tag">FULL ARSENAL</div>
+          <h2 class="section-title">EXPLORE THE <span class="purple-gradient-text">MODULES</span></h2>
+          <p class="section-desc">Over 100+ powerful hacks organized into dedicated categories.</p>
+        </div>
+
+        <div class="module-filter-tabs">
+          <button class="mod-tab-btn active" data-cat="all">All Modules</button>
+          <button class="mod-tab-btn" data-cat="combat">Combat (25)</button>
+          <button class="mod-tab-btn" data-cat="movement">Movement (30)</button>
+          <button class="mod-tab-btn" data-cat="render">Render (20)</button>
+          <button class="mod-tab-btn" data-cat="player">Player & World (25)</button>
+        </div>
+
+        <div class="modules-grid" id="modules-display-grid">
+          <!-- Combat -->
+          <div class="module-card" data-category="combat">
+            <div class="mod-card-top">
+              <span class="mod-icon">⚔️</span>
+              <span class="mod-key">BIND: R</span>
+            </div>
+            <h4>KillAura (Silent)</h4>
+            <p>Attacks targets around you with configurable FOV, CPS, reach distance, and artificial rotation smoothing.</p>
+            <span class="mod-status-tag safe">GrimAC Safe</span>
+          </div>
+
+          <div class="module-card" data-category="combat">
+            <div class="mod-card-top">
+              <span class="mod-icon">🔮</span>
+              <span class="mod-key">BIND: C</span>
+            </div>
+            <h4>AutoCrystal</h4>
+            <p>Automatically places and breaks End Crystals at maximum speed for 1.20.4 Anarchy CPvP supremacy.</p>
+            <span class="mod-status-tag anarchy">Anarchy King</span>
+          </div>
+
+          <div class="module-card" data-category="combat">
+            <div class="mod-card-top">
+              <span class="mod-icon">🛡️</span>
+              <span class="mod-key">BIND: V</span>
+            </div>
+            <h4>Velocity (Anti-Knockback)</h4>
+            <p>Reduces or completely eliminates incoming knockback. Customizable horizontal and vertical percentages.</p>
+            <span class="mod-status-tag safe">Watchdog Safe</span>
+          </div>
+
+          <!-- Movement -->
+          <div class="module-card" data-category="movement">
+            <div class="mod-card-top">
+              <span class="mod-icon">🦅</span>
+              <span class="mod-key">BIND: F</span>
+            </div>
+            <h4>Fly / PacketFly</h4>
+            <p>Glide, fly, or phase through air barriers using packet-spoofed velocity bypasses.</p>
+            <span class="mod-status-tag bypass">Bypass Mode</span>
+          </div>
+
+          <div class="module-card" data-category="movement">
+            <div class="mod-card-top">
+              <span class="mod-icon">🧱</span>
+              <span class="mod-key">BIND: G</span>
+            </div>
+            <h4>Scaffold (Auto-Bridge)</h4>
+            <p>Automatically places blocks beneath your feet while moving. Supports godbridge, safe walk, and tower up.</p>
+            <span class="mod-status-tag safe">Bedwars Safe</span>
+          </div>
+
+          <div class="module-card" data-category="movement">
+            <div class="mod-card-top">
+              <span class="mod-icon">⚡</span>
+              <span class="mod-key">BIND: B</span>
+            </div>
+            <h4>Speed (BHop)</h4>
+            <p>Increases movement speed using auto-jumping, strafe vectoring, and timer modification.</p>
+            <span class="mod-status-tag bypass">Vulcan Safe</span>
+          </div>
+
+          <!-- Render -->
+          <div class="module-card" data-category="render">
+            <div class="mod-card-top">
+              <span class="mod-icon">💎</span>
+              <span class="mod-key">BIND: X</span>
+            </div>
+            <h4>X-Ray (Ore Finder)</h4>
+            <p>Makes non-ore blocks invisible so you can pinpoint Diamonds, Ancient Debris, and Netherite instantly.</p>
+            <span class="mod-status-tag safe">Undetectable</span>
+          </div>
+
+          <div class="module-card" data-category="render">
+            <div class="mod-card-top">
+              <span class="mod-icon">👁️</span>
+              <span class="mod-key">BIND: P</span>
+            </div>
+            <h4>ESP & Glowing Tracers</h4>
+            <p>Draws glowing purple bounding boxes, 3D Chams, and snap lines around players, mobs, and items.</p>
+            <span class="mod-status-tag safe">Visual Only</span>
+          </div>
+
+          <!-- Player & World -->
+          <div class="module-card" data-category="player">
+            <div class="mod-card-top">
+              <span class="mod-icon">🦺</span>
+              <span class="mod-key">AUTO</span>
+            </div>
+            <h4>AutoArmor & Stealer</h4>
+            <p>Equips the strongest armor automatically and loots chests within milliseconds during games.</p>
+            <span class="mod-status-tag safe">Legit Mode</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE INTERACTIVE WEB CLIENT / DEMO SECTION -->
+    <section id="web-demo" class="section-padding dark-purple-bg">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <div class="section-tag">LIVE BROWSER DEMO</div>
+          <h2 class="section-title">TRY SPRITEHACK <span class="purple-gradient-text">IN YOUR BROWSER</span></h2>
+          <p class="section-desc">Experience our 3D Minecraft Web Launcher and ClickGUI without installing anything!</p>
+        </div>
+
+        <div class="demo-launcher-frame">
+          <div class="frame-bar">
+            <span class="frame-dot red"></span>
+            <span class="frame-dot yellow"></span>
+            <span class="frame-dot green"></span>
+            <span class="frame-title">SpriteHack Web Launcher v3.5 (Three.js 3D Engine)</span>
+          </div>
+          
+          <div class="frame-content">
+            <!-- EMBEDDED LAUNCHER DASHBOARD VIEW -->
+            <div id="launcher-view" class="launcher-container">
+              <header class="wurst-navigator-bar">
+                <div class="navigator-brand">
+                  <img src="./spritehack_logo.jpg" alt="SpriteHack" style="height: 24px; border-radius: 4px;">
+                  <span style="font-size: 14px; font-weight: 800; color: #fff;">SPRITEHACK</span>
+                  <span class="purple-badge">PURPLE EDITION</span>
+                </div>
+                <div style="font-size: 12px; color: var(--text-muted); font-family: var(--font-mono);">
+                  In-Game Menu: <kbd class="kbd-purple">Right Shift</kbd> | TabGUI: <kbd class="kbd-purple">Arrow Keys</kbd>
+                </div>
+              </header>
+
+              <div class="launcher-body">
+                <div class="launcher-card">
+                  <div class="card-brand-header">
+                    <div class="brand-icon-purple">⚡</div>
+                    <div>
+                      <h3 style="font-size: 20px; font-weight: 800; color: #fff;">SpriteHack Web Client</h3>
+                      <p style="font-size: 12px; color: var(--text-muted);">Wallhack • Aimbot • KillAura • Fly • Scaffold • X-Ray • TabGUI</p>
+                    </div>
+                  </div>
+
+                  <div class="form-group-list">
+                    <div>
+                      <label class="form-label">Player Username (Cracked / Offline):</label>
+                      <div class="input-with-btn">
+                        <input type="text" id="input-username" value="SpriteHacker" class="input-purple">
+                        <button id="btn-random-name" class="btn-wurst-action">🎲 Random</button>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label class="form-label">Minecraft Game Version:</label>
+                      <div class="version-grid">
+                        <div id="card-ver-1204" class="version-card selected" data-ver="1.20.4">
+                          <div class="ver-title">Minecraft 1.20.4</div>
+                          <div class="ver-sub">Modern Anarchy • AutoCrystal • Wallhack</div>
+                        </div>
+
+                        <div id="card-ver-189" class="version-card" data-ver="1.8.9">
+                          <div class="ver-title">Minecraft 1.8.9</div>
+                          <div class="ver-sub">Classic PvP • Bedwars • Fast Aim</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label class="form-label">Preset Config:</label>
+                      <div class="preset-btn-group">
+                        <button class="btn-apply-config btn-wurst-action" data-config="anarchy">🔥 Anarchy Rage</button>
+                        <button class="btn-apply-config btn-wurst-action" data-config="pvp">⚔️ PvP Combat</button>
+                        <button class="btn-apply-config btn-wurst-action" data-config="legit">🛡️ Legit Closet</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button id="btn-launch-game" class="btn-launch-purple">
+                    <span>⚡</span>
+                    <span>LAUNCH 3D WEB CLIENT (PRESS RIGHT-SHIFT FOR MENU)</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- IN-GAME VIEWPORT & HUD -->
+            <div id="game-view" class="game-viewport">
+              <canvas id="game-canvas"></canvas>
+              <div class="crosshair"></div>
+
+              <!-- Top Action Bar -->
+              <div class="game-top-bar">
+                <button id="btn-toggle-gui-top" class="btn-wurst-action purple-glow-btn">
+                  <span>⚡</span> CLICKGUI (R-SHIFT)
+                </button>
+                <button id="btn-spawn-mob" class="btn-wurst-action">
+                  <span>🧟</span> Spawn Target Mob
+                </button>
+                <button id="btn-exit-to-launcher" class="btn-wurst-action exit-btn">
+                  <span>✕</span> Exit Game
+                </button>
+              </div>
+
+              <!-- HUD Layer -->
+              <div class="hud-layer">
+                <div class="wurst-watermark" id="hud-watermark">
+                  <span class="brand">SpriteHack</span>
+                  <span class="badge" id="hud-ver-badge">v3.5 Purple</span>
+                  <span class="stats">FPS: <b id="hud-fps-val" style="color: #fff;">60</b> | XYZ: <b id="hud-coords-val" style="color: #fff;">0 64 0</b></span>
+                </div>
+
+                <div id="wurst-tabgui" class="wurst-tabgui"></div>
+                <div class="wurst-arraylist" id="hud-arraylist"></div>
+
+                <!-- TargetHUD -->
+                <div class="target-hud" id="target-hud">
+                  <img id="target-hud-avatar" class="target-avatar" src="https://minotar.net/avatar/Zombie/40.png" alt="Target">
+                  <div class="target-details">
+                    <div class="target-name" id="target-hud-name">Zombie_Target</div>
+                    <div class="target-health-bar">
+                      <div class="target-health-fill" id="target-hud-health" style="width: 100%;"></div>
+                    </div>
+                    <div class="target-meta">
+                      <span>HP: <b id="target-hud-hp-num" style="color: #fff;">20.0</b></span>
+                      <span>DIST: <b id="target-hud-dist-num" style="color: var(--accent-purple-bright);">3.8m</b></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hotbar -->
+                <div class="hud-hotbar-container">
+                  <div class="hud-hotbar" id="hud-hotbar"></div>
+                </div>
+              </div>
+
+              <!-- In-Game Chat Console -->
+              <div id="game-chat-box" class="game-chat-console">
+                <div id="chat-messages" class="chat-message-list">
+                  <div><span class="chat-prefix">[SpriteHack]</span> Type <span class="chat-highlight">.help</span> for commands. Press <span class="chat-highlight">Right Shift</span> to open ClickGUI!</div>
+                </div>
+                <div class="chat-input-row">
+                  <input type="text" id="input-chat" placeholder="Type command (.bind, .fly, .killaura, .help)..." class="chat-input">
+                </div>
+              </div>
+            </div>
+
+            <!-- CLICKGUI OVERLAY -->
+            <div id="clickgui-view" class="wurst-clickgui-overlay"></div>
+            <div id="notification-container" class="notification-container"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD SECTION -->
+    <section id="download" class="section-padding">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <div class="section-tag">FREE DOWNLOAD</div>
+          <h2 class="section-title">DOWNLOAD <span class="purple-gradient-text">SPRITEHACK FOR MINECRAFT 1.20.4</span></h2>
+          <p class="section-desc">Download SpriteHack v3.5.0 for Fabric 1.20.4. Compatible with Windows, macOS, and Linux.</p>
+        </div>
+
+        <div class="download-cards-grid single-focus-grid">
+          <!-- Download 1: Fabric Mod 1.20.4 -->
+          <div class="download-card featured">
+            <div class="card-top-tag">OFFICIAL RELEASE</div>
+            <div class="dl-icon">🔮</div>
+            <h3>SpriteHack v3.5.0 (Minecraft 1.20.4)</h3>
+            <div class="dl-ver">Fabric Mod .jar • 100% Free & Open Source</div>
+            <p>The ultimate purple utility client mod for Minecraft 1.20.4. Features AutoCrystal, PacketFly, GrimAC bypasses, X-Ray, and custom ClickGUI.</p>
+            <a href="./SpriteHack-1.20.4.jar" download class="btn-download-solid">
+              <span>📥</span> Download SpriteHack-1.20.4.jar
+            </a>
+          </div>
+
+          <!-- Download 2: Standalone Windows Launcher 1.20.4 -->
+          <div class="download-card">
+            <div class="dl-icon">💻</div>
+            <h3>Windows Launcher Script (1.20.4)</h3>
+            <div class="dl-ver">One-Click Setup (.bat / .exe)</div>
+            <p>Automatic 1.20.4 installation script that downloads Java 17 and Fabric for you. Zero manual file copying required.</p>
+            <button id="btn-download-launcher-bat" class="btn-download-outline">
+              <span>⚡</span> Download 1.20.4 Installer (.bat)
+            </button>
+          </div>
+        </div>
+
+        <!-- Installation Instructions -->
+        <div class="install-guide-box">
+          <h3 class="guide-title">📖 Quick Installation Guide</h3>
+          <div class="steps-grid">
+            <div class="step-item">
+              <span class="step-num">1</span>
+              <div>
+                <strong>Install Fabric Loader</strong>
+                <p>Download and install Fabric Loader for Minecraft 1.20.4 or 1.8.9 from fabricmc.net.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-num">2</span>
+              <div>
+                <strong>Drop into .minecraft/mods</strong>
+                <p>Place the downloaded <code>SpriteHack.jar</code> file into your <code>.minecraft/mods</code> folder.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-num">3</span>
+              <div>
+                <strong>Launch & Press Right-Shift</strong>
+                <p>Start Minecraft with the Fabric profile. Press <kbd class="kbd-purple">Right Shift</kbd> to open the Purple ClickGUI!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE SECTION -->
+    <section id="comparison" class="section-padding dark-purple-bg">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <div class="section-tag">COMPARE CLIENTS</div>
+          <h2 class="section-title">SPRITEHACK VS <span class="purple-gradient-text">THE COMPETITION</span></h2>
+          <p class="section-desc">See how SpriteHack compares to other Minecraft utility clients.</p>
+        </div>
+
+        <div class="table-responsive">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="highlight-col">⚡ SpriteHack v3.5</th>
+                <th>Wurst Client</th>
+                <th>Meteor Client</th>
+                <th>LiquidBounce</th>
+                <th>Feather Client</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>GrimAC & Watchdog Bypasses</strong></td>
+                <td class="highlight-col status-yes">✓ Advanced AI</td>
+                <td class="status-no">✗ Limited</td>
+                <td class="status-yes">✓ Good</td>
+                <td class="status-yes">✓ Good</td>
+                <td class="status-no">✗ No Hacks</td>
+              </tr>
+              <tr>
+                <td><strong>FPS Impact (+Boost)</strong></td>
+                <td class="highlight-col status-yes">✓ +30% FPS</td>
+                <td class="status-no">✗ FPS Drop</td>
+                <td class="status-neutral">~ Average</td>
+                <td class="status-neutral">~ Average</td>
+                <td class="status-yes">✓ Optimized</td>
+              </tr>
+              <tr>
+                <td><strong>Purple Neon ClickGUI</strong></td>
+                <td class="highlight-col status-yes">✓ Sleek Purple</td>
+                <td class="status-no">✗ Basic Green</td>
+                <td class="status-neutral">~ Dark Gray</td>
+                <td class="status-neutral">~ Red/Dark</td>
+                <td class="status-no">✗ Standard</td>
+              </tr>
+              <tr>
+                <td><strong>Interactive Web Demo</strong></td>
+                <td class="highlight-col status-yes">✓ 3D In-Browser</td>
+                <td class="status-no">✗ None</td>
+                <td class="status-no">✗ None</td>
+                <td class="status-no">✗ None</td>
+                <td class="status-no">✗ None</td>
+              </tr>
+              <tr>
+                <td><strong>Multi-Version (1.8.9 & 1.20.4)</strong></td>
+                <td class="highlight-col status-yes">✓ Native Both</td>
+                <td class="status-neutral">~ ViaVia</td>
+                <td class="status-no">✗ 1.20+ Only</td>
+                <td class="status-yes">✓ Both</td>
+                <td class="status-yes">✓ Launcher</td>
+              </tr>
+              <tr>
+                <td><strong>Price & Licensing</strong></td>
+                <td class="highlight-col status-yes">100% Free / Open</td>
+                <td class="status-yes">Free</td>
+                <td class="status-yes">Free</td>
+                <td class="status-yes">Free</td>
+                <td class="status-neutral">Freemium</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section-padding">
+      <div class="section-container max-w-3xl">
+        <div class="section-header text-center">
+          <div class="section-tag">QUESTIONS & ANSWERS</div>
+          <h2 class="section-title">FREQUENTLY ASKED <span class="purple-gradient-text">QUESTIONS</span></h2>
+        </div>
+
+        <div class="faq-accordion">
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>Is SpriteHack safe to download and virus-free?</span>
+              <span class="faq-chevron">❯</span>
+            </summary>
+            <div class="faq-answer">
+              Yes, 100%. SpriteHack is completely free, open-source software. You can audit the entire source code on our GitHub repository. There are no crypto miners, RATs, telemetry, or hidden ad-injectors.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How do I open the SpriteHack ClickGUI in-game?</span>
+              <span class="faq-chevron">❯</span>
+            </summary>
+            <div class="faq-answer">
+              Press the <kbd class="kbd-purple">Right Shift</kbd> key on your keyboard. Alternatively, you can use arrow keys for the quick TabGUI menu on the top left, or type <code>.help</code> in chat.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Will I get banned on servers like Hypixel or 2b2t?</span>
+              <span class="faq-chevron">❯</span>
+            </summary>
+            <div class="faq-answer">
+              SpriteHack comes with preset bypass configurations designed specifically for servers running GrimAC, Vulcan, Hypixel Watchdog, or NCP. Using the "Legit" or "Anarchy" presets significantly minimizes detection risk.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Do I need Fabric Loader to run SpriteHack?</span>
+              <span class="faq-chevron">❯</span>
+            </summary>
+            <div class="faq-answer">
+              Yes, SpriteHack is built as a Fabric mod for maximum performance and compatibility. Simply install Fabric Loader for 1.20.4 or 1.8.9 and drop SpriteHack into your <code>.minecraft/mods</code> folder, or use our Standalone Windows Launcher!
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Can I play SpriteHack directly in my browser without downloading?</span>
+              <span class="faq-chevron">❯</span>
+            </summary>
+            <div class="faq-answer">
+              Yes! Scroll to our <a href="#web-demo" class="purple-link">Web Client section</a> above to test out the 3D game sandbox and ClickGUI directly in your browser.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <img src="./spritehack_logo.jpg" alt="SpriteHack" class="footer-logo">
+          <p>The #1 Undetectable Purple Minecraft Utility Client.</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>Navigation</h4>
+            <a href="#hero">Home</a>
+            <a href="#features">Features</a>
+            <a href="#modules">Modules</a>
+            <a href="#web-demo">Web Client</a>
+            <a href="#download">Download</a>
+          </div>
+
+          <div class="link-group">
+            <h4>Community</h4>
+            <a href="https://github.com/urb3x/spritehack.github.io" target="_blank" rel="noopener">GitHub Repo</a>
+            <a href="https://github.com/urb3x/spritehack.github.io/issues" target="_blank" rel="noopener">Issue Tracker</a>
+            <a href="#web-demo">Online Launcher</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 SpriteHack Client. Open Source under MIT License.</p>
+        <p class="disclaimer">Minecraft is a registered trademark of Mojang AB / Microsoft. SpriteHack is not affiliated with Mojang AB or Microsoft.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
