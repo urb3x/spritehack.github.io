@@ -539,14 +539,26 @@
   <!-- DYNAMIC LIVE DOWNLOAD COUNTER SCRIPT -->
   <script>
     (function() {
+      // Purge all legacy 14,000+ cached keys from browser storage
+      try {
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k && k.includes('download')) {
+            const v = parseInt(localStorage.getItem(k), 10);
+            if (!isNaN(v) && v > 300) {
+              localStorage.removeItem(k);
+            }
+          }
+        }
+      } catch (e) {}
+
       const BASE_COUNT = 152;
-      localStorage.removeItem('spritehack_download_count');
-      let savedCount = localStorage.getItem('spritehack_dl_count_v2');
+      let savedCount = localStorage.getItem('sh_cnt_v3');
       let currentCount = savedCount ? parseInt(savedCount, 10) : BASE_COUNT;
-      if (isNaN(currentCount) || currentCount < BASE_COUNT || currentCount > 200) {
+      if (isNaN(currentCount) || currentCount < BASE_COUNT || currentCount > 300) {
         currentCount = BASE_COUNT;
+        localStorage.setItem('sh_cnt_v3', currentCount);
       }
-      localStorage.setItem('spritehack_dl_count_v2', currentCount);
 
       const formatNum = (num) => num.toLocaleString('en-US');
 
@@ -566,7 +578,7 @@
 
       const incrementCount = () => {
         currentCount += 1;
-        localStorage.setItem('spritehack_dl_count_v2', currentCount);
+        localStorage.setItem('sh_cnt_v3', currentCount);
         updateUI(true);
       };
 
