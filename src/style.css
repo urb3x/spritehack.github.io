@@ -1549,6 +1549,44 @@ body, html {
   padding: 42px 36px;
 }
 
+/* Dynamic Download Counter Badge */
+.dl-counter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid var(--purple-border);
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin: 12px 0 20px;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dl-counter-badge.pulse {
+  transform: scale(1.08);
+  border-color: var(--purple-bright);
+  box-shadow: 0 0 25px var(--purple-glow-strong);
+}
+
+.counter-fire { font-size: 16px; }
+
+.counter-count {
+  font-size: 18px;
+  font-weight: 900;
+  font-family: var(--font-mono);
+  color: var(--purple-bright);
+  text-shadow: 0 0 10px var(--purple-glow);
+}
+
+.counter-sub {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .big-dl-btn {
   padding: 16px 36px;
   font-size: 16px;
