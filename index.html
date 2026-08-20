@@ -536,14 +536,16 @@
     </footer>
   </div>
 
-  <!-- DYNAMIC LIVE DOWNLOAD COUNTER SCRIPT -->
+  <!-- DYNAMIC LIVE GLOBAL DOWNLOAD COUNTER SCRIPT -->
   <script>
     (function() {
+      const BASE_COUNT = 152;
+
       // Purge all legacy 14,000+ cached keys from browser storage
       try {
         for (let i = 0; i < localStorage.length; i++) {
           const k = localStorage.key(i);
-          if (k && k.includes('download')) {
+          if (k && (k.includes('download') || k.includes('cnt'))) {
             const v = parseInt(localStorage.getItem(k), 10);
             if (!isNaN(v) && v > 300) {
               localStorage.removeItem(k);
@@ -552,23 +554,19 @@
         }
       } catch (e) {}
 
-      const BASE_COUNT = 152;
-      let savedCount = localStorage.getItem('sh_cnt_v3');
-      let currentCount = savedCount ? parseInt(savedCount, 10) : BASE_COUNT;
-      if (isNaN(currentCount) || currentCount < BASE_COUNT || currentCount > 300) {
-        currentCount = BASE_COUNT;
-        localStorage.setItem('sh_cnt_v3', currentCount);
-      }
+      let currentCount = BASE_COUNT;
+      let userClicks = parseInt(localStorage.getItem('sh_user_clicks') || '0', 10);
 
       const formatNum = (num) => num.toLocaleString('en-US');
 
       const updateUI = (pulse = false) => {
+        const total = currentCount + userClicks;
         const mainEl = document.getElementById('dl-counter-main');
         const heroEl = document.getElementById('hero-dl-counter');
         const badgeEl = document.getElementById('dl-counter-badge');
 
-        if (mainEl) mainEl.textContent = formatNum(currentCount);
-        if (heroEl) heroEl.textContent = formatNum(currentCount) + '+';
+        if (mainEl) mainEl.textContent = formatNum(total);
+        if (heroEl) heroEl.textContent = formatNum(total) + '+';
 
         if (pulse && badgeEl) {
           badgeEl.classList.add('pulse');
@@ -576,14 +574,29 @@
         }
       };
 
+      const fetchGlobalCount = async () => {
+        try {
+          const res = await fetch('./download_count.json?t=' + Date.now());
+          if (res.ok) {
+            const data = await res.json();
+            if (data && typeof data.downloads === 'number') {
+              currentCount = Math.max(BASE_COUNT, data.downloads);
+              updateUI();
+            }
+          }
+        } catch (e) {
+          updateUI();
+        }
+      };
+
       const incrementCount = () => {
-        currentCount += 1;
-        localStorage.setItem('sh_cnt_v3', currentCount);
+        userClicks += 1;
+        localStorage.setItem('sh_user_clicks', userClicks);
         updateUI(true);
       };
 
       document.addEventListener('DOMContentLoaded', () => {
-        updateUI();
+        fetchGlobalCount();
 
         const dlBtns = document.querySelectorAll('a[download], .btn-download-solid, .btn-hero-primary');
         dlBtns.forEach(btn => {
