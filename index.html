@@ -540,12 +540,13 @@
   <script>
     (function() {
       const BASE_COUNT = 152;
-      let savedCount = localStorage.getItem('spritehack_download_count');
+      localStorage.removeItem('spritehack_download_count');
+      let savedCount = localStorage.getItem('spritehack_dl_count_v2');
       let currentCount = savedCount ? parseInt(savedCount, 10) : BASE_COUNT;
-      if (isNaN(currentCount) || currentCount < BASE_COUNT) {
+      if (isNaN(currentCount) || currentCount < BASE_COUNT || currentCount > 200) {
         currentCount = BASE_COUNT;
-        localStorage.setItem('spritehack_download_count', currentCount);
       }
+      localStorage.setItem('spritehack_dl_count_v2', currentCount);
 
       const formatNum = (num) => num.toLocaleString('en-US');
 
@@ -565,7 +566,7 @@
 
       const incrementCount = () => {
         currentCount += 1;
-        localStorage.setItem('spritehack_download_count', currentCount);
+        localStorage.setItem('spritehack_dl_count_v2', currentCount);
         updateUI(true);
       };
 
