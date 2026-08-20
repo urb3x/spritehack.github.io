@@ -99,7 +99,7 @@
             <div class="stat-label">Detection Rate</div>
           </div>
           <div class="stat-card">
-            <div class="stat-num" id="hero-dl-counter">14,892+</div>
+            <div class="stat-num" id="hero-dl-counter">128+</div>
             <div class="stat-label">Total Downloads</div>
           </div>
         </div>
@@ -351,7 +351,7 @@
             <!-- Dynamic Live Download Counter Badge -->
             <div class="dl-counter-badge" id="dl-counter-badge">
               <span class="counter-fire">🔥</span>
-              <span class="counter-count" id="dl-counter-main">14,892</span>
+              <span class="counter-count" id="dl-counter-main">128</span>
               <span class="counter-sub">Downloads & Counting</span>
             </div>
 
@@ -549,9 +549,13 @@
   <!-- DYNAMIC LIVE DOWNLOAD COUNTER SCRIPT -->
   <script>
     (function() {
-      const BASE_COUNT = 14892;
+      const BASE_COUNT = 128;
       let savedCount = localStorage.getItem('spritehack_download_count');
       let currentCount = savedCount ? parseInt(savedCount, 10) : BASE_COUNT;
+      if (isNaN(currentCount) || currentCount > 1000) {
+        currentCount = BASE_COUNT;
+        localStorage.setItem('spritehack_download_count', currentCount);
+      }
 
       const formatNum = (num) => num.toLocaleString('en-US');
 
